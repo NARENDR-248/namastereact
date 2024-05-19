@@ -1,3 +1,42 @@
 #heading{
     color: rgb(88, 49, 158);
 }
+.header{
+    display: flex;
+    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    border-radius: 3px;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.logo>img{
+    width: 160px;
+}
+.nav-links>ul{
+    display: flex;
+}
+.nav-links>ul>li{
+    list-style-type: none;
+    padding: 20px;
+}
+.res-card{
+    
+    border: 1px solid black;
+    width: 220px;
+    padding: 30px;
+    place-content: center;
+    margin: 30px;
+    
+
+}
+.res-logo{
+    width: 190px;
+}
+.res_list{
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    margin: 30px;
+  
+}
