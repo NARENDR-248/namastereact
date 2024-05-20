@@ -8,6 +8,7 @@
     border-radius: 3px;
     justify-content: space-between;
     align-items: center;
+   
 
 }
 .logo>img{
@@ -39,4 +40,7 @@
     place-content: center;
     margin: 30px;
   
+}
+.res-container{
+    margin-top: 100px;
 }
