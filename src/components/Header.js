@@ -1,32 +1,31 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, IconButton, Box } from '@mui/material';
-import { LOGO_CDN } from '../utilits/constants';
+import React, { useState } from "react";
 
+import { LOGO_CDN } from "../utilits/constants";
+import { Button } from "@mui/material";
 
 const Header = () => {
-    return (
-        <AppBar position="fixed" sx={{ background: 'transparent', marginBottom:"90px" }}>
-            <Toolbar sx={{ flexGrow: 1 }}>
-                <IconButton
-                    size="large"
-                    edge="start"
-                    color="inherit"
-                    aria-label="menu"
-                    sx={{ mr: 2 }}
-                >
-                    {/* Your logo goes here */}
-                    <img src={LOGO_CDN} alt="logo" style={{ maxWidth: '100px' ,mixBlendMode:"darken"}} />
-                </IconButton>
-                <Box sx={{ flexGrow: 1 }} />
-                <Button color='success' >Home</Button>
-                <Button color="success">About</Button>
-                <Button color="success" >Cart</Button>
-
-                
-               
-            </Toolbar>
-        </AppBar>
-    );
-}
+    const [btn,setBtn]=useState("login")
+  return (
+    <div>
+      <div className="header">
+        <div className="logo">
+          <img src={LOGO_CDN} />
+        </div>
+        <div className="nav-links">
+          <ul>
+            <li>home</li>
+            <li>about</li>
+            <li>contact</li>
+            <li>cart</li>
+            <Button variant="contained" sx={{marginRight:"40px"}} onClick={()=>{
+                btn==="login"?setBtn("logout"):setBtn("login")
+            }}>{btn}</Button>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Header;

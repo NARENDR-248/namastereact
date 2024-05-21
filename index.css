@@ -41,6 +41,84 @@
     margin: 30px;
   
 }
-.res-container{
-    margin-top: 100px;
+
+.btn-flt{
+
+    display: flex;
+    justify-content: center;
+
+  margin: 30px;
+  
 }
+
+ .shimar{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 50%;
+    right: 50%;
+    
+    
+
+ }
+
+
+ /* shimmar card */
+
+ 
+.shimmer-card {
+    width: 300px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 40px;
+}
+
+.shimmer-image,
+.shimmer-line {
+    background: #e0e0e0;
+    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+    border-radius: 4px;
+}
+
+.shimmer-image {
+    width: 100%;
+    height: 180px;
+}
+
+.shimmer-line {
+    height: 20px;
+}
+
+.shimmer-line.short {
+    width: 60%;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+.main_shimar{
+    display: flex;
+    flex-wrap: wrap;
+    place-content: center;
+    margin-top: 40px;
+}
+ .res-container{
+    justify-content: center;
+    
+ }
+ .topreted{
+    justify-content: end;
+ }
+

@@ -1,17 +1,15 @@
 import { RES_CDN } from "../utilits/constants";
 
-const Res_card = (props) => {
-  const {resdata}=props;
-  console.log(resdata)
-  const{
-    cloudinaryImageId,
-    name,
-    cuisines,
-    area,
-    lastMileTravelString,
-    costForTwoString,
-    avgRating,
-  }=resdata.data;
+const Res_card = ({
+  cloudinaryImageId,
+  name,
+  cuisines,
+  area,
+  lastMileTravelString,
+  costForTwoString,
+  avgRating,
+}) => {
+  
 
 
 
@@ -24,7 +22,7 @@ const Res_card = (props) => {
         alt="logo-csard"
       />
       <h3>{name}</h3>
-      {console.log(name)}
+      
       <h3>cost:300Rs</h3>
       <h4>{avgRating}stars</h4>
     </div>
