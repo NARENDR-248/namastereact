@@ -68,7 +68,8 @@ const Body = () => {
               return res.info.avgRating > 4;
             });
 
-            setListreslist(filterres_list);
+            setFilterserch(filterres_list);
+            console.log("not")
           }}
         >
           Topreted
