@@ -17,11 +17,11 @@ const Body = () => {
   }, []);
   const fatchdata = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.4387245&lng=78.4453532&collection=83646&tags=layout_CCS_SouthIndian&sortBy=&filters=&type=rcv2&offset=0&page_type=null"
     );
     const json = await data.json();
     const fetchedRestaurants =
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+      json.data.cards.slice(3);
     console.log(fetchedRestaurants);
     setListreslist(fetchedRestaurants);
     setFilterserch(fetchedRestaurants);
@@ -31,12 +31,14 @@ const Body = () => {
     <Smmer />
   ) : (
     <div className="res-container">
+      <div className="fil-container">
       <div className="btn-flt">
         <TextField
           variant="outlined"
           placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+         
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
@@ -50,7 +52,7 @@ const Body = () => {
            variant="contained"
           onClick={() => {
             const filter_serch = listreslist.filter((res) => {
-              return res.info.name.toLowerCase().includes(search.toLowerCase());
+              return res.card.card.info.name.toLowerCase().includes(search.toLowerCase());
             });
             setFilterserch(filter_serch);
           }}
@@ -65,7 +67,7 @@ const Body = () => {
           variant="contained"
           onClick={() => {
             const filterres_list = listreslist.filter((res) => {
-              return res.info.avgRating > 4;
+              return res.card.card.info.avgRating > 4;
             });
 
             setFilterserch(filterres_list);
@@ -77,9 +79,12 @@ const Body = () => {
 
       </div>
 
-      <div className="res_list">
+      </div>
+     
+
+      <div className="res_list"> 
         {filterserch.map((res) => {
-          return <Res_card key={res.info?.id} {...res.info} />;
+          return <Res_card key={res.card.card.info?.id} {...res.card.card.info} />;
         })}
       </div>
     </div>

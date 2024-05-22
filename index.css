@@ -9,6 +9,7 @@
     justify-content: space-between;
     align-items: center;
    
+   
 
 }
 .logo>img{
@@ -76,6 +77,7 @@
     flex-direction: column;
     gap: 15px;
     margin: 40px;
+    
 }
 
 .shimmer-image,
@@ -114,11 +116,11 @@
     place-content: center;
     margin-top: 40px;
 }
- .res-container{
+ .fil-container{
+    display: flex;
+    align-items: center;
     justify-content: center;
-    
+
  }
- .topreted{
-    justify-content: end;
- }
+ 
 

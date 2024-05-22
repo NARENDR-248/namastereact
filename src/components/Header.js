@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import { LOGO_CDN } from "../utilits/constants";
 import { Button } from "@mui/material";
@@ -13,9 +14,9 @@ const Header = () => {
         </div>
         <div className="nav-links">
           <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>contact</li>
+            <li> <Link to='/'>home</Link></li>
+            <li> <Link to='/about'>about</Link></li>
+            <li> <Link to="/contact">contact</Link></li>
             <li>cart</li>
             <Button variant="contained" sx={{marginRight:"40px"}} onClick={()=>{
                 btn==="login"?setBtn("logout"):setBtn("login")
