@@ -1,74 +1,83 @@
-#heading{
+#heading {
     color: rgb(88, 49, 158);
 }
-.header{
+
+.header {
     display: flex;
     border: 1px solid black;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     border-radius: 3px;
     justify-content: space-between;
     align-items: center;
-   
-   
+    position: static;
+    top: 0;
+    right: 0;
+
 
 }
-.logo>img{
+
+.logo>img {
     width: 160px;
- 
+
 }
-.nav-links>ul{
+
+.nav-links>ul {
     display: flex;
     font-size: 20px;
 }
-.nav-links>ul>li{
+
+.nav-links>ul>li {
     list-style-type: none;
     padding: 20px;
 }
-.res-card{
-    
+
+.res-card {
+
     border: 1px solid black;
     width: 220px;
     padding: 30px;
     place-content: center;
     margin: 30px;
-    
+
 
 }
-.res-logo{
+
+.res-logo {
     width: 190px;
 }
-.res_list{
+
+.res_list {
     display: flex;
     flex-wrap: wrap;
     place-content: center;
     margin: 30px;
-  
+
 }
 
-.btn-flt{
+.btn-flt {
 
     display: flex;
     justify-content: center;
 
-  margin: 30px;
-  
+    margin: 30px;
+
 }
 
- .shimar{
+.shimar {
     display: flex;
     flex-wrap: wrap;
     position: relative;
     top: 50%;
     right: 50%;
-    
-    
-
- }
 
 
- /* shimmar card */
 
- 
+}
+
+
+/* shimmar card */
+
+
 .shimmer-card {
     width: 300px;
     padding: 20px;
@@ -79,7 +88,7 @@
     flex-direction: column;
     gap: 15px;
     margin: 40px;
-    
+
 }
 
 .shimmer-image,
@@ -108,33 +117,66 @@
     0% {
         background-position: -200% 0;
     }
+
     100% {
         background-position: 200% 0;
     }
 }
-.main_shimar{
+
+.main_shimar {
     display: flex;
     flex-wrap: wrap;
     place-content: center;
     margin-top: 40px;
 }
- .fil-container{
+
+.fil-container {
     display: flex;
     align-items: center;
     justify-content: center;
 
- }
- .custom-link {
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Inherit color from parent */
-  }
-  
-  .custom-link:hover {
-    color: inherit; /* Keep the color same on hover */
-  }
-  .link{
+}
+
+.custom-link {
+    text-decoration: none;
+    /* Remove underline */
+    color: inherit;
+    /* Inherit color from parent */
+}
+
+.custom-link:hover {
+    color: inherit;
+    /* Keep the color same on hover */
+}
+
+.link {
     text-decoration: none;
 
-  }
- 
+}
 
+.res-menu_card {
+    width: 90%;
+
+    border: 1px solid black;
+    margin: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    overflow-x: hidden;
+
+
+
+
+
+}
+
+.res-menu-info {
+    word-spacing: 30px;
+}
+
+.res-img-info>img {
+    width: 220px;
+    padding: 30px;
+}
