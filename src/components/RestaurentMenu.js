@@ -17,17 +17,22 @@ const RestaurentMenu = () => {
 
     const resmenu =
     json.data.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card?.itemCards
-    console.log(json);
+    const resmenu2=json.data.cards[4]?.groupedCard?.cardGroupMap
+
+    console.log(resmenu2);
     setResinfo(resmenu);
   };
   if(resinfo===null){
     return(<Smmer />)
   }
+  
+  
   return (
     <div>
+
       <ul>
         {resinfo.map((res) => {
-          return <li>{res.card.info.name}</li>;
+          return <li key={res.card.info.id}>{res.card.info.name}</li>;
         })}
       </ul>
     </div>

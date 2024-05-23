@@ -14,9 +14,11 @@
 }
 .logo>img{
     width: 160px;
+ 
 }
 .nav-links>ul{
     display: flex;
+    font-size: 20px;
 }
 .nav-links>ul>li{
     list-style-type: none;
@@ -122,5 +124,17 @@
     justify-content: center;
 
  }
+ .custom-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+  }
+  
+  .custom-link:hover {
+    color: inherit; /* Keep the color same on hover */
+  }
+  .link{
+    text-decoration: none;
+
+  }
  
 

@@ -85,6 +85,7 @@ const Body = () => {
             <Link
               key={res.card.card.info?.id}
               to={/restarent/ + res.card.card.info?.id}
+              className="custom-link"
             >
               <Res_card {...res.card.card.info} />
             </Link>
