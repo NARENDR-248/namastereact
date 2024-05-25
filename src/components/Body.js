@@ -7,6 +7,7 @@ import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./COSTAMHOOKS/useOnlineStatus";
 
 const Body = () => {
   const [listreslist, setListreslist] = useState([]);
@@ -26,6 +27,13 @@ const Body = () => {
     setListreslist(fetchedRestaurants);
     setFilterserch(fetchedRestaurants);
   };
+  const onlineStatus=useOnlineStatus();
+  if(onlineStatus===false){
+    return(
+      <h1>there is internet problem</h1>
+    )
+  }
+
 
   return listreslist.length === 0 ? (
     <Smmer />
