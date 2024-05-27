@@ -12,7 +12,7 @@ import RestaurentMenu from "./components/RestaurentMenu";
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => (
-  <div className="container">
+  <div >
     <Header />
     <Outlet />
   </div>

@@ -14,7 +14,7 @@ const RestaurentMenu = () => {
   }
 
   return (
-    <div>
+    <div className='flex justify-center items-center'>
       <ul>
         {resinfo.map((res) => {
           return (

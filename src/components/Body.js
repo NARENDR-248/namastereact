@@ -39,11 +39,13 @@ const Body = () => {
     <Smmer />
   ) : (
     <div className="res-container">
-      <div className="fil-container">
-        <div className="btn-flt">
+      <div className="flex items-center justify-between m-8">
+        <div></div>
+        <div className="flex items-center  space-x-4">
           <TextField
             variant="outlined"
             placeholder="Search..."
+            className=" w-full"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             InputProps={{
@@ -87,7 +89,7 @@ const Body = () => {
         </div>
       </div>
 
-      <div className="res_list">
+      <div className="flex flex-wrap ml-30">
         {filterserch.map((res) => {
           return (
             <Link

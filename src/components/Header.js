@@ -10,18 +10,18 @@ const Header = () => {
     const OnlineStatus=useOnlineStatus()
   return (
     <div>
-      <div className="header">
+      <div className="flex justify-between items-center border-4 border-indigo-500/100  w-full"  >
         <div className="logo">
           <img src={LOGO_CDN} />
         </div>
         <div className="nav-links">
-          <ul>
-            <li>online:{OnlineStatus?"✔":"🔴"}</li>
-            <li> <Link className="link" to='/'>home</Link></li>
-            <li> <Link className="link" to='/about'>about</Link></li>
-            <li> <Link className="link" to="/contact">contact</Link></li>
-            <li> <Link className="link" to="/grocery">Grocery</Link></li>
-            <li>cart</li>
+          <ul className="flex pl-70"> 
+            <li className="px-10">online:{OnlineStatus?"✔":"🔴"}</li>
+            <li className="px-10"> <Link className="link" to='/'>home</Link></li>
+            <li className="px-10"><Link className="link" to='/about'>about</Link></li>
+            <li className="px-10"><Link className="link" to="/contact">contact</Link></li>
+            <li className="px-10"> <Link className="link" to="/grocery">Grocery</Link></li>
+            <li className="px-10">cart</li>
             <Button variant="contained" sx={{marginRight:"40px"}} onClick={()=>{
                 btn==="login"?setBtn("logout"):setBtn("login")
             }}>{btn}</Button>

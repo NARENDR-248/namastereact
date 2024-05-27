@@ -1,182 +1,35 @@
-#heading {
-    color: rgb(88, 49, 158);
-}
-
-.header {
-    display: flex;
-    border: 1px solid black;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    border-radius: 3px;
-    justify-content: space-between;
-    align-items: center;
-    position: static;
-    top: 0;
-    right: 0;
-
-
-}
-
-.logo>img {
-    width: 160px;
-
-}
-
-.nav-links>ul {
-    display: flex;
-    font-size: 20px;
-}
-
-.nav-links>ul>li {
-    list-style-type: none;
-    padding: 20px;
-}
-
-.res-card {
-
-    border: 1px solid black;
-    width: 220px;
-    padding: 30px;
-    place-content: center;
-    margin: 30px;
-
-
-}
-
-.res-logo {
-    width: 190px;
-}
-
-.res_list {
-    display: flex;
-    flex-wrap: wrap;
-    place-content: center;
-    margin: 30px;
-
-}
-
-.btn-flt {
-
-    display: flex;
-    justify-content: center;
-
-    margin: 30px;
-
-}
-
-.shimar {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    top: 50%;
-    right: 50%;
-
-
-
-}
-
-
-/* shimmar card */
-
-
-.shimmer-card {
-    width: 300px;
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin: 40px;
-
-}
-
-.shimmer-image,
-.shimmer-line {
-    background: #e0e0e0;
-    background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.5s infinite;
-    border-radius: 4px;
-}
-
-.shimmer-image {
-    width: 100%;
-    height: 180px;
-}
-
-.shimmer-line {
-    height: 20px;
-}
-
-.shimmer-line.short {
-    width: 60%;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @keyframes shimmer {
     0% {
-        background-position: -200% 0;
+      background-position: -1000px 0;
     }
-
     100% {
-        background-position: 200% 0;
+      background-position: 1000px 0;
     }
-}
+  }
+  
+  .shimmer {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(to right, #f0f0f0 0%, #e0e0e0 20%, #f0f0f0 40%, #f0f0f0 100%);
+    background-size: 2000px 100%;
+  }
+  
+  .shimmer-image {
+    width: 100%;
+    height: 150px;
+    background-color: #e0e0e0;
+  }
+  
+  .shimmer-line {
+    height: 20px;
+    background-color: #e0e0e0;
+    margin-top: 10px;
+  }
+  
+  .shimmer-line.short {
+    width: 80%;
+  }
 
-.main_shimar {
-    display: flex;
-    flex-wrap: wrap;
-    place-content: center;
-    margin-top: 40px;
-}
-
-.fil-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.custom-link {
-    text-decoration: none;
-    /* Remove underline */
-    color: inherit;
-    /* Inherit color from parent */
-}
-
-.custom-link:hover {
-    color: inherit;
-    /* Keep the color same on hover */
-}
-
-.link {
-    text-decoration: none;
-
-}
-
-.res-menu_card {
-    width: 90%;
-
-    border: 1px solid black;
-    margin: 30px;
-    text-align: center;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 30px;
-    overflow-x: hidden;
-
-
-
-
-
-}
-
-.res-menu-info {
-    word-spacing: 30px;
-}
-
-.res-img-info>img {
-    width: 220px;
-    padding: 30px;
-}
