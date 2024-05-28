@@ -1,15 +1,15 @@
-import { defaultHead } from "next/head";
-import { useRouteError } from "react-router-dom";
+import React from "react";
+import { useLocation } from "react-router-dom";
 
 const Error = () => {
-  const Err = useRouteError();
+  let location = useLocation();
+
   return (
     <div>
-      <h2>opps!</h2>
-      <h3>something wrong ? checkit code onece</h3>
-      {console.log(Err)}
-      <h1>{Err.status}-{Err.statusText}</h1>
+      <h1>404 Not Found</h1>
+      <p>No match for <code>{location.pathname}</code></p>
     </div>
   );
 };
+
 export default Error;

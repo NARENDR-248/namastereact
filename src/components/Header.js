@@ -22,9 +22,12 @@ const Header = () => {
             <li className="px-10"><Link className="link" to="/contact">contact</Link></li>
             <li className="px-10"> <Link className="link" to="/grocery">Grocery</Link></li>
             <li className="px-10">cart</li>
+            <Link to="/login">
             <Button variant="contained" sx={{marginRight:"40px"}} onClick={()=>{
                 btn==="login"?setBtn("logout"):setBtn("login")
             }}>{btn}</Button>
+            </Link>
+           
             
           </ul>
         </div>

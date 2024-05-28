@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import * as ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route ,Outlet} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Outlet } from "react-router-dom";
 
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,11 +8,13 @@ import About from "./components/About";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
 import RestaurentMenu from "./components/RestaurentMenu";
+import Login from "./components/Login";
+import Register from "./components/Register";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const AppLayout = () => (
-  <div >
+  <div>
     <Header />
     <Outlet />
   </div>
@@ -34,8 +36,10 @@ const App = () => (
           }
         />
         <Route path="restarent/:resId" element={<RestaurentMenu />} />
-        <Route path="*" element={<Error />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
       </Route>
+      <Route path="*" element={<Error />} />
     </Routes>
   </Router>
 );
