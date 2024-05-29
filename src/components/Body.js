@@ -1,4 +1,4 @@
-import Res_card from "./Res_card";
+import Res_card, { Promoted_card } from "./Res_card";
 import { reslist } from "../utilits/markdata";
 import { Button } from "@mui/material";
 import { useEffect, useState } from "react";
@@ -33,6 +33,7 @@ const Body = () => {
       <h1>there is internet problem</h1>
     )
   }
+  const Promoted=Promoted_card(Res_card);
 
 
   return listreslist.length === 0 ? (
@@ -97,7 +98,10 @@ const Body = () => {
               to={/restarent/ + res.card.card.info?.id}
               className="custom-link"
             >
-              <Res_card {...res.card.card.info} />
+             {
+              res.card.card.info.promoted?<Promoted{...res.card.card.info}/>:<Res_card {...res.card.card.info} />
+
+             }
             </Link>
           );
         })}

@@ -1,11 +1,11 @@
 import { RES_CDN } from "../utilits/constants";
 
-const ResrarentMenuCard = ({ imageId, name, price, description }) => {
-  // console.log(props)
+const ResrarentMenuCard = (props) => {
+  console.log(props)
   return (
     <div className='bg-slate-50 flex justify-between shadow-xl m-20 w-full'>
       <div className="res-menu_info">
-        <h2  className="text-gray-500">{name}</h2>
+        <h2  className="text-gray-500">{props}</h2>
         <h3  className="text-gray-500">{price / 100}</h3>
 
         <p  className="text-gray-50">{description }<br/></p>

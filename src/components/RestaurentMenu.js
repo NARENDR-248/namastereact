@@ -12,16 +12,26 @@ const RestaurentMenu = () => {
   if (resinfo === null) {
     return <Smmer />;
   }
+  console.log(resinfo);
+  const centegery = Array.isArray(resinfo)
+    ? resinfo.filter(
+        (c) =>
+          c.card?.card?.["@type"] ===
+          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+      )
+    : [];
 
+  console.log(centegery);
+
+  // console.log(centegery);
   return (
-    <div className='flex justify-center items-center'>
-      <ul>
-        {resinfo.map((res) => {
-          return (
-            <ResrarentMenuCard key={res.card.info.id} {...res.card.info} />
-          );
-        })}
-      </ul>
+    <div className="flex justify-center items-center">
+      {
+        centegery.map((res)=>{
+          <ResrarentMenuCard title={res.card.title} />
+        })
+      }
+      
     </div>
   );
 };

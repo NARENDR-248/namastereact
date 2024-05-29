@@ -26,4 +26,17 @@ const Res_card = ({
   );
 };
 
+export const Promoted_card=(Res_card)=>{
+  return(props)=>{
+    return(
+      <diV>
+        <label className="absolute bg-black text-white rounded-lg p-4 m-4">promoted</label>
+        <Res_card {...props}/>
+
+      </diV>
+    )
+  }
+
+}
+
 export default Res_card;
