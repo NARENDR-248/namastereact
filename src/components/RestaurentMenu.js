@@ -8,30 +8,45 @@ import useRestarentApiCall from "./COSTAMHOOKS/useRestarentApiCall";
 const RestaurentMenu = () => {
   const { resId } = useParams();
   const resinfo = useRestarentApiCall(resId);
+  
+  const [showIndex, setShowIndex] = useState(null);
 
   if (resinfo === null) {
     return <Smmer />;
   }
-  console.log(resinfo);
-  const centegery = Array.isArray(resinfo)
-    ? resinfo.filter(
-        (c) =>
-          c.card?.card?.["@type"] ===
-          "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
-      )
-    : [];
+  const { name, cuisines, costForTwoMessage } =
+    resinfo?.cards[2]?.card?.card?.info;
 
-  console.log(centegery);
+    const categories =
+    resinfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+      (c) =>
+        c.card?.card?.['@type'] ===
+        'type.googleapis.com/swiggy.presentation.food.v2.ItemCategory'
+    );
+    console.log(categories)
+  
 
-  // console.log(centegery);
+
+
   return (
-    <div className="flex justify-center items-center">
-      {
-        centegery.map((res)=>{
-          <ResrarentMenuCard title={res.card.title} />
-        })
-      }
-      
+    <div className="text-center">
+      <h1 className="font-bold my-6 text-2xl">{name}</h1>
+      <p className="font-bold text-lg">
+        {cuisines.join(", ")} - {costForTwoMessage}
+      </p>
+      {categories.map((category, index) => (
+        // Controlled Component
+        <ResrarentMenuCard
+
+        
+          data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
+         
+        />
+      ))}
+    
+
     </div>
   );
 };

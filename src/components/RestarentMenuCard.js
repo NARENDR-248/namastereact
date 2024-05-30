@@ -1,19 +1,26 @@
 import { RES_CDN } from "../utilits/constants";
+import Items from "./items";
 
-const ResrarentMenuCard = (props) => {
-  console.log(props)
+const ResrarentMenuCard = ({ data ,showItems, setShowIndex}) => {
+  const handleClick = () => {
+    setShowIndex();
+  };
+  console.log(data)
   return (
-    <div className='bg-slate-50 flex justify-between shadow-xl m-20 w-full'>
-      <div className="res-menu_info">
-        <h2  className="text-gray-500">{props}</h2>
-        <h3  className="text-gray-500">{price / 100}</h3>
+    <div>
+      <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4" onClick={handleClick}>
+        <div className="flex justify-between cursor-pointer">
+        <span className="font-bold text-lg">
+          {data.title} ({data.itemCards.length})
+        </span>
+        <span>🔽</span>
 
-        <p  className="text-gray-50">{description }<br/></p>
+        </div>
+       
+        {    showItems &&<Items items={data.itemCards} /> }
+    
       </div>
-      <div className="flex flex-col ">
-        <img className="w-full h-40 object-cover rounded-t-lg" src={RES_CDN + imageId} />
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">add</button>
-      </div>
+
     </div>
   );
 };
