@@ -16,7 +16,7 @@ const Res_card = ({
         src={RES_CDN + cloudinaryImageId}
         alt="Restaurant logo"
       />
-      <h3 className="text-xl font-semibold">{name}</h3>
+      <h3 className="text-xl font-semibold text-gray-700">{name}</h3>
       <p className="text-gray-500 text-center break-words w-full px-2">{cuisines.join(", ")}</p>
       <p className="text-gray-500">{area}</p>
       <p className="text-gray-700">{lastMileTravelString}</p>

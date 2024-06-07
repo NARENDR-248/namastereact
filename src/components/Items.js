@@ -1,7 +1,15 @@
 import React from 'react'
 import { RES_CDN } from '../utilits/constants'
+import { useDispatch } from 'react-redux'
+import { addItem } from './store/CartSlice'
 
-const items = ({items}) => {
+const Items = ({items}) => {
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    // Dispatch an action
+    dispatch(addItem(item));
+  };
   return (
     <div>
         {items.map((item) => (
@@ -23,7 +31,7 @@ const items = ({items}) => {
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute">
-              <button className="p-2 ml-6 mt-[70px] rounded-lg bg-black text-white shadow-lg hover:bg-white  hover:text-black transition-all duration-[.3s]">
+              <button onClick={()=>handleAddItem(item)} className="p-2 ml-6 mt-[70px] rounded-lg bg-black text-white shadow-lg hover:bg-white  hover:text-black transition-all duration-[.3s]">
                 Add +
               </button>
             </div>
@@ -40,4 +48,4 @@ const items = ({items}) => {
   )
 }
 
-export default items
+export default Items

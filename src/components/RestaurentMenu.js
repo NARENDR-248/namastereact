@@ -1,13 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useContext} from "react";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../utilits/constants";
 import Smmer from "./Smmer";
 import ResrarentMenuCard from "./RestarentMenuCard";
 import useRestarentApiCall from "./COSTAMHOOKS/useRestarentApiCall";
+import ThemeContext from "../utilits/ThemeContext";
 
 const RestaurentMenu = () => {
   const { resId } = useParams();
   const resinfo = useRestarentApiCall(resId);
+  const { isDarkTheme, toggleTheme } = useContext(ThemeContext);
+  
+  
   
   const [showIndex, setShowIndex] = useState(null);
 
@@ -29,7 +33,7 @@ const RestaurentMenu = () => {
 
 
   return (
-    <div className="text-center">
+    <div className={isDarkTheme?'text-center bg-black text-white':'text-center'}>
       <h1 className="font-bold my-6 text-2xl">{name}</h1>
       <p className="font-bold text-lg">
         {cuisines.join(", ")} - {costForTwoMessage}

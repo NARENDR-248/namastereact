@@ -1,18 +1,20 @@
 import Res_card, { Promoted_card } from "./Res_card";
 import { reslist } from "../utilits/markdata";
 import { Button } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import Smmer from "./Smmer";
 import TextField from "@mui/material/TextField";
 import InputAdornment from "@mui/material/InputAdornment";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "./COSTAMHOOKS/useOnlineStatus";
+import ThemeContext from "../utilits/ThemeContext";
 
 const Body = () => {
   const [listreslist, setListreslist] = useState([]);
   const [search, setSearch] = useState();
   const [filterserch, setFilterserch] = useState([]);
+  const { isDarkTheme} = useContext(ThemeContext);
 
   useEffect(() => {
     fatchdata();
@@ -46,7 +48,7 @@ const Body = () => {
           <TextField
             variant="outlined"
             placeholder="Search..."
-            className=" w-full"
+            className={isDarkTheme?"border-blue-900 w-full":"w-full"}
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             InputProps={{
@@ -85,7 +87,7 @@ const Body = () => {
               console.log("not");
             }}
           >
-            Topreted
+            Toprated
           </Button>
         </div>
       </div>
