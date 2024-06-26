@@ -12,7 +12,7 @@ import ThemeContext from "../utilits/ThemeContext";
 
 const Body = () => {
   const [listreslist, setListreslist] = useState([]);
-  const [search, setSearch] = useState();
+  const [search, setSearch] = useState("");
   const [filterserch, setFilterserch] = useState([]);
   const { isDarkTheme} = useContext(ThemeContext);
 
