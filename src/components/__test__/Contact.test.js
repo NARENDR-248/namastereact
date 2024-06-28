@@ -6,3 +6,12 @@ test('shound be render', () => {
     const heading=screen.getByRole("heading")
     expect(heading).toBeInTheDocument();
 });
+  
+
+
+test("should be render or not ",()=>{
+    render(<Contact/>)
+    const inputBox=screen.getAllByRole("textbox")
+
+    expect(inputBox.length).toBe(2)
+})
